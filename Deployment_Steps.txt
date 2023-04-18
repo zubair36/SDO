@@ -1,0 +1,41 @@
+Working Code:  
+C:\Zubair\Intelij-Workspace\Microservices\Ramesh\springboot-microservices\Udemy\springboot-microservices
+===============Steps===============
+1) Run rabbitmq in docker
+docker run --rm -it -p 5672:5672 rabbitmq:3.11.13
+
+2) Run zipkin
+java -jar .\zipkin-server-2.24.0-exec.jar
+
+3) Run Service Registry MS from MainClass
+
+4) Run Config Server MS from MainClass
+
+5) Run API Gateway MS from MainClass
+
+6) Run Department MS from MainClass
+
+7) Run Employee MS from MainClass
+
+=============Requests/URLs=============
+CREATE DEPARTMENT 
+http://localhost:9191/api/departments
+{
+    "departmentName": "Security",
+    "departmentDescription": "This department deals with Security queries",
+    "departmentCode": "SEC008"
+}
+
+GET DEPARTMENT
+http://localhost:9191/api/departments/SEC008
+
+CREATE EMPLOYEE 
+http://localhost:9191/api/employees
+{
+    "firstName": "Umar",
+    "lastName": "Virk",
+    "email": "Umar@gmail.com",
+    "departmentCode": "SEC008"
+}
+GET EMPLOYEE
+http://localhost:9191/api/employees/21
